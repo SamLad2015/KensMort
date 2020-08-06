@@ -1,0 +1,44 @@
+:host /deep/ ng2-st-tbody-edit-delete {display: flex !important;
+  height: 0 !important;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom:hover {
+  color: #5dcfe3;
+}
+
+:host /deep/ .fa {
+  font-size: 1.5em;
+}
+
+:host /deep/ .fa-edit {
+  margin-top: 2px;
+  margin-right: 10px;
+}
+
+:host /deep/ .fa-plus {
+  font-size: 1em;
+}
+:host /deep/ .add-button {
+  float: right;
+}
+:host /deep/ ng2-smart-table-pager nav.ng2-smart-pagination-nav {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+:host /deep/ ng2-smart-table-pager nav.ng2-smart-pagination-nav ul li a {
+  height: 35px;
+}
+.filter-button {
+  float: right;
+  margin-bottom: 10px;
+}
