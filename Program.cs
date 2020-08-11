@@ -2,10 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Pertemps.Repositories;
+using KensMort.Repositories;
 using System;
 
-namespace Pertemps
+namespace KensMort
 {
     public class Program
     {

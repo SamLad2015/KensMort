@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\Pertemps.csproj": {}
+    "C:\\Users\\ladsa\\RiderProjects\\KensMort\\Pertemps.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\Pertemps.csproj": {
+    "C:\\Users\\ladsa\\RiderProjects\\KensMort\\Pertemps.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\Pertemps.csproj",
+        "projectUniqueName": "C:\\Users\\ladsa\\RiderProjects\\KensMort\\Pertemps.csproj",
         "projectName": "Pertemps",
-        "projectPath": "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\Pertemps.csproj",
+        "projectPath": "C:\\Users\\ladsa\\RiderProjects\\KensMort\\Pertemps.csproj",
         "packagesPath": "C:\\Users\\ladsa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\obj\\",
+        "outputPath": "C:\\Users\\ladsa\\RiderProjects\\KensMort\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

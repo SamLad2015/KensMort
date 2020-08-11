@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿using System.Globalization;
+using AutoMapper;
+using KensMort.MappingProfiles;
+using KensMort.Repositories;
+using KensMort.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -13,13 +17,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Pertemps.Helpers;
-using Pertemps.MappingProfiles;
-using Pertemps.Repositories;
-using Pertemps.Services;
+using KensMort.Helpers;
+using Microsoft.AspNetCore.Localization;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Pertemps
+namespace KensMort
 {
     public class Startup
     {
@@ -35,16 +37,18 @@ namespace Pertemps
         {
             services.AddOptions();
             services.AddDbContext<TestDbContext>(opt => 
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                opt.UseInMemoryDatabase("KensMort"));
             services.AddCustomCors("AllowAllOrigins");
             
-            services.AddScoped<ICandidateRepository, CandidateRepository>();
-            services.AddScoped<ISkillRepository, SkillRepository>();
-            services.AddScoped<ISkillService, SkillService>();
-            services.AddScoped<ICandidateService, CandidateService>();
+            services.AddScoped<ILoanRepository, LoanRepository>();
+            services.AddScoped<IScenarioRepository, ScenarioRepository>();
+            services.AddScoped<IPortfolioRepository, PortfolioRepository>();
+            services.AddScoped<ILoanService, LoanService>();
+            services.AddScoped<IScenarioService, ScenarioService>();
+            services.AddScoped<IPortfolioService, PortfolioService>();
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
-            services.AddScoped<IUrlHelper>(x =>
+            services.AddScoped(x =>
             {
                 var actionContext = x.GetRequiredService<IActionContextAccessor>().ActionContext;
                 var factory = x.GetRequiredService<IUrlHelperFactory>();
@@ -64,7 +68,12 @@ namespace Pertemps
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             services.AddSwaggerGen();
 
-            services.AddAutoMapper(typeof(CandidateMappings));
+            services.AddAutoMapper(typeof(PortfolioMappings));
+            services.AddAutoMapper(typeof(LoanMappings));
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture("en-GB");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +83,9 @@ namespace Pertemps
             IWebHostEnvironment env, 
             IApiVersionDescriptionProvider provider)
         {
+
+            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture("en-GB");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -87,6 +99,8 @@ namespace Pertemps
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseCors("AllowAllOrigins");
+            app.UseRequestLocalization(localizationOptions);
+
 
             app.UseEndpoints(endpoints =>
             {

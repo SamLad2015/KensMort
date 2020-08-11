@@ -1,0 +1,14 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <span class="header">{{ title }}</span>
+  <span class="menu-spacer"></span>
+  <div class="menu">
+    <a [class.selected]="currentPath==='/'" mat-button [routerLink]="'/'"> Loans </a>
+    <a [class.selected]="currentPath==='/scenarios'" mat-button [routerLink]="'/scenarios'"> Scenarios </a>
+  </div>
+</div>
+
+<div class="content" role="main">
+  <router-outlet></router-outlet>
+</div>
+

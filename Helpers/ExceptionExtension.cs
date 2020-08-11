@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
 
-namespace Pertemps.Helpers
+namespace KensMort.Helpers
 {
     public static class ExceptionExtension
     {

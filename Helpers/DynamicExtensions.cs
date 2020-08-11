@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Dynamic;
 
-namespace Pertemps.Models
+namespace KensMort.Models
 {
     public static class DynamicExtensions
     {

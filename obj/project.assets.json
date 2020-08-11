@@ -8344,11 +8344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\Pertemps.csproj",
-      "projectName": "Pertemps",
-      "projectPath": "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\Pertemps.csproj",
+      "projectUniqueName": "C:\\Users\\ladsa\\RiderProjects\\KensMort\\KensMort.csproj",
+      "projectName": "KensMort",
+      "projectPath": "C:\\Users\\ladsa\\RiderProjects\\KensMort\\KensMort.csproj",
       "packagesPath": "C:\\Users\\ladsa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ladsa\\RiderProjects\\PertempsNew\\obj\\",
+      "outputPath": "C:\\Users\\ladsa\\RiderProjects\\KensMort\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

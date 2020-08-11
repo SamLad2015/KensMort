@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using KensMort.Entities;
 using Microsoft.EntityFrameworkCore;
-using Pertemps.Entities;
 
-namespace Pertemps.Repositories
+namespace KensMort.Repositories
 {
     public class TestDbContext : DbContext
     {
@@ -12,32 +12,16 @@ namespace Pertemps.Repositories
         {
 
         }
-        public DbSet<SkillEntity> Skills { get; set; }
-        public DbSet<CandidateEntity> Candidates { get; set; }
-        public DbSet<CandidateSkillEntity> CandidateSkills { get; set; }
+        public DbSet<LoanEntity> Loans { get; set; }
+        public DbSet<ScenarioEntity> Scenarios { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SkillEntity>()
+            modelBuilder.Entity<LoanEntity>()
                 .Property(c => c.Id)
                 .IsRequired();
-            modelBuilder.Entity<CandidateEntity>()
+            modelBuilder.Entity<ScenarioEntity>()
                 .Property(r => r.Id)
                 .IsRequired();
-            modelBuilder.Entity<CandidateSkillEntity>()
-                .Property(r => r.Id)
-                .IsRequired();
-
-            modelBuilder.Entity<CandidateSkillEntity>()
-                .HasOne<CandidateEntity>(cs => cs.Candidate)
-                .WithMany(c => c.Skills)
-                .HasForeignKey(cs => cs.CandidateId);
-
-
-            modelBuilder.Entity<CandidateSkillEntity>()
-                .HasOne<SkillEntity>(cs => cs.Skill)
-                .WithMany(s => s.Skills)
-                .HasForeignKey(cs => cs.SkillId);
-            
         }
     }
 }

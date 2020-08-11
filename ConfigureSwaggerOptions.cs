@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Pertemps
+namespace KensMort
 {
     public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
     {
@@ -24,9 +24,9 @@ namespace Pertemps
         {
             var info = new OpenApiInfo()
             {
-                Title = "Pertemps API",
+                Title = "KensMort API",
                 Version = description.ApiVersion.ToString(),
-                Description = "Test API for Test for Pertemps.",
+                Description = "Test API for Test for KensMort.",
             };
 
             if (description.IsDeprecated)

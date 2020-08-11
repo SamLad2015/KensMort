@@ -1,5 +1,5 @@
-# Pertemps
-This repository has been created to host a project created as a Technical test for Pertemps.
+# kensmort
+This repository has been created to host a project created as a Technical test for kensmort.
 
 ## Getting Started
 you should have some knowledge of running .net core projects and running npm commands in order to run this project
@@ -15,7 +15,7 @@ In order to run this project the following are the Pre-requisites:
 
 ## Running the Project
 1) Get the latest code from the repository and start in Visual Studio or IDE of your choice
-2) Make sure you have a database called Pertemps set up with read/write access. Under the Data folder locate the initial set up sql script 0001.sql and run it.
+2) Make sure you have a database called kensmort set up with read/write access. Under the Data folder locate the initial set up sql script 0001.sql and run it.
 3) Modify the connection string under app settings of the api project and Build the project. If on your local machine a trust certificate (which is mandatory to run .net core APIs) is not added then it will be asked. 
 you can get more help about it here. https://docs.microsoft.com/en-us/aspnet/core/security/authentication/certauth?view=aspnetcore-3.1
 4) Project should contain a 'ui' directory which holds the front end Angular 9 code. Please open a terminal on the ui directory path.
@@ -23,17 +23,17 @@ you can get more help about it here. https://docs.microsoft.com/en-us/aspnet/cor
 Please do if you have been asked to do so.
 6) Run the Test Api project. This should start a swagger portal as below:
 
-![Swagger for Pertemps API](http://samlad.co.uk/clientimages/pertemps/swagger.png)
+![Swagger for kensmort API](http://samlad.co.uk/clientimages/kensmort/swagger.png)
 
 7)You can test the current version of the API here, please use version number as 1 in order to test it.
 8) Run 'ng serve' to run the front end project. Once it is completed it will prompt to open the front end portal on http://localhost:4200/
 9) Make sure that the api is running on 'https://localhost:5001/' though which would be confirmed when swagger is up and running. Front End portal should look as below:
 
-![Front End for Pertemps Test](http://samlad.co.uk/clientimages/pertemps/ui.png)
+![Front End for kensmort Test](http://samlad.co.uk/clientimages/kensmort/ui.png)
 
 ## Running the .net Core Test
 1) You have already built the solution while launched the API but if you haven't then please build the main solution.
-2) Under the solution you can find a project called 'Pertemps.Tests'. Right click on it and select 'Run Unit Tests'. This will run the .net Unit Tests for Api controller.
+2) Under the solution you can find a project called 'kensmort.Tests'. Right click on it and select 'Run Unit Tests'. This will run the .net Unit Tests for Api controller.
 
 
 

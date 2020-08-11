@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Pertemps.Helpers
+namespace KensMort.Helpers
 {
     public static class VersioningExtension
     {
