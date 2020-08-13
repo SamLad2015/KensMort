@@ -7,5 +7,7 @@ namespace KensMort.Services
     public interface ILoanService
     {
         Task<IList<LoanModel>> GetAll(LoanRequestModel request);
+        Task<long> GetLoansCount();
+        Task<LoanResponseModel> GetProcessedLoans(long processedLoansCount);
     }
 }

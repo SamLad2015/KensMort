@@ -7,6 +7,9 @@ namespace KensMort.Repositories
 {
     public interface IScenarioRepository
     { 
-        Task<IList<ScenarioEntity>> Upload();
+        void Upload(IList<ScenarioEntity> list);
+        Task<IList<ScenarioEntity>> GetAll();
     }
+    
+    
 }

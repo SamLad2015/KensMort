@@ -69,3 +69,15 @@ C:\Users\ladsa\RiderProjects\KensMort\obj\Debug\netcoreapp3.1\staticwebassets\Ke
 C:\Users\ladsa\RiderProjects\KensMort\obj\Debug\netcoreapp3.1\KensMort.dll
 C:\Users\ladsa\RiderProjects\KensMort\obj\Debug\netcoreapp3.1\KensMort.pdb
 C:\Users\ladsa\RiderProjects\KensMort\obj\Debug\netcoreapp3.1\KensMort.genruntimeconfig.cache
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\EPPlus.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\ladsa\RiderProjects\KensMort\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll

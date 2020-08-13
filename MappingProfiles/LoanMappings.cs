@@ -9,7 +9,7 @@ namespace KensMort.MappingProfiles
         public LoanMappings()
         {
             CreateMap<LoanEntity, LoanModel>().ReverseMap();
-            CreateMap<ScenarioEntity, ScenarioModel>();
+            CreateMap<ScenarioEntity, ScenarioModel>().ReverseMap();
         }
     }
 }

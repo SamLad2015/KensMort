@@ -1,5 +1,12 @@
-﻿using KensMort.Services;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using KensMort.Models;
+using KensMort.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 
 namespace KensMort.Controllers.v1
 {
@@ -15,15 +22,25 @@ namespace KensMort.Controllers.v1
             IScenarioService scenarioService)
         {
             _scenarioService = scenarioService;
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
 
         [HttpPost]
         [Route("upload", Name = nameof(Upload))]
-        public ActionResult Upload()
+        public async Task<IList<ScenarioModel>> Upload(IFormFile formFile)  
         {
-            _scenarioService.UploadScenarios();
+            try
+            {
+                _scenarioService.UploadScenarios(formFile);
             
-            return Ok();
-        }
+                var scenarios = await  _scenarioService.GetAll();
+                return await Task.FromResult(scenarios);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }  
     }
 }

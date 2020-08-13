@@ -1,1 +1,49 @@
-﻿<p>scenarios works!</p>
+﻿<div class="upload-area" *ngIf="!uploadedFile && !processStarted">
+  <angular-file-drag-drop [maxSize]="1"
+                          [maxFiles]="1"
+                          [removeButton]="true"
+                          [submitBtnText]="'Upload'"
+                          [showSupportedFormats]="true"
+                          [acceptedFormats]="['.csv', '.xls', 'xlsx']"
+                          (select)="onFileSelect($event)">
+  </angular-file-drag-drop>
+</div>
+<div class="upload-buttons" *ngIf="uploadedFile && !processStarted">
+  <div>
+    <span>Selected File: {{uploadedFile[0].name}}</span>
+  </div>
+  <div>
+    <button class="mat-raised-button" mat-button (click)="processScenarios()">
+      <mat-icon class="mat-icon">settings</mat-icon>
+      Process
+    </button>
+    <button class="mat-raised-button" mat-button (click)="cancelFile()">
+      <mat-icon class="mat-icon">cancel</mat-icon>
+      Cancel
+    </button>
+  </div>
+</div>
+<div class="processed-data" *ngIf="processStarted">
+  <div class="processed-scenarios">
+    <app-scenarios-list [source]="scenarios"></app-scenarios-list>
+  </div>
+  <div class="processed-loans">
+    <app-processed-loans-list [source]="processedLoans" [loading]="loading"></app-processed-loans-list>
+    <div *ngIf="!loading && progressBarValue < 100">
+      <div>
+        <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>
+        <div class="progress-bar-details">
+          {{processedLoanCount}} of {{loanCount}} processed (<span>{{progressBarValue}} %</span>)
+        </div>
+      </div>
+    </div>
+    <div *ngIf="loading">
+      <div class="loading-spinner-container">
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        <div>
+          Processing Loans...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

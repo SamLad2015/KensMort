@@ -10,3 +10,8 @@ export class LoanRequest {
   portfolioIds: string;
   cutOffDate: string;
 }
+
+export class LoanResponse {
+  loans: Loan[];
+  processedLoanCount: number;
+}

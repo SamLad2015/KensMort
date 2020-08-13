@@ -2,32 +2,39 @@
   <mat-step label="Categories" state="categories">
     <div class="contents">
         <p>Select a Category to explore portfolios</p>
-        <mat-card *ngFor="let c of categories" [class.selected]="c.selected" (click)="selectCategory(c)">
-          {{c.categoryName}}
-        </mat-card>
+        <div class="card-container">
+          <mat-card *ngFor="let c of categories" [class.selected]="c.selected" (click)="selectCategory(c)">
+            {{c.categoryName}}
+          </mat-card>
+        </div>
     </div>
     <div class="stepper-buttons">
       <button class="mat-raised-button" mat-button matStepperNext (click)="loadPortfolios()">
         <mat-icon class="mat-icon">library_books</mat-icon>
         Portfolios
+        <mat-icon class="mat-icon">arrow_right</mat-icon>
       </button>
     </div>
   </mat-step>
   <mat-step label="Portfolios" state="portfolios">
     <div class="contents">
       <p>Select one or more portfolios</p>
-      <mat-card *ngFor="let p of portfolios" [class.selected]="p.selected" (click)="selectPortfolio(p)">
-        {{p.portfolioName}}
-      </mat-card>
+      <div class="card-container">
+        <mat-card *ngFor="let p of portfolios" [class.selected]="p.selected" (click)="selectPortfolio(p)">
+          {{p.portfolioName}}
+        </mat-card>
+      </div>
     </div>
     <div class="stepper-buttons">
       <button class="mat-raised-button" mat-button matStepperPrevious>
+        <mat-icon class="mat-icon">arrow_left</mat-icon>
         <mat-icon class="mat-icon">playlist_add</mat-icon>
         Categories
       </button>
       <button class="mat-raised-button" mat-button matStepperNext>
         <mat-icon class="mat-icon">calendar_today</mat-icon>
         Cut-off Date
+        <mat-icon class="mat-icon">arrow_right</mat-icon>
       </button>
     </div>
   </mat-step>
@@ -49,21 +56,32 @@
     </div>
     <div class="stepper-buttons">
       <button class="mat-raised-button" mat-button matStepperPrevious>
+        <mat-icon class="mat-icon">arrow_left</mat-icon>
         <mat-icon class="mat-icon">library_books</mat-icon>
         Portfolio
       </button>
       <button class="mat-raised-button" mat-button matStepperNext (click)="loadLoans()">
         <mat-icon class="mat-icon">notes</mat-icon>
         Loans
+        <mat-icon class="mat-icon">arrow_right</mat-icon>
       </button>
     </div>
   </mat-step>
   <mat-step label="Loans" state="loans">
-    <div class="contents">
-      <ng2-smart-table #table [settings]="settings" [source]="source"></ng2-smart-table>
+    <div class="contents" *ngIf="!loading">
+      <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+    </div>
+    <div *ngIf="loading">
+      <div class="loading-spinner-container">
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        <div>
+          Processing Loans...
+        </div>
+      </div>
     </div>
     <div class="stepper-buttons">
       <button class="mat-raised-button" mat-button matStepperPrevious>
+        <mat-icon class="mat-icon">arrow_left</mat-icon>
         <mat-icon class="mat-icon">library_books</mat-icon>
         Portfolios
       </button>

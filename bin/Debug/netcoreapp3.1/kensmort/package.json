@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~10.0.5",
     "@angular/platform-browser-dynamic": "~10.0.5",
     "@angular/router": "~10.0.5",
+    "angular-file-drag-drop": "0.0.12",
     "ng2-smart-table": "^1.6.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

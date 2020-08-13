@@ -26,11 +26,12 @@ export class PortfolioComponent implements OnInit {
       perPage: 10
     },
     mode: 'external',
-    columns: ConfigStaticService.tableConfig()
+    columns: ConfigStaticService.tableConfig('loans')
   };
   source: Loan[];
   selectedDate: Date = new Date();
   today: Date = new Date();
+  loading = false;
   constructor(private portfolioService: PortfolioService,
               private loanService: LoanService) { }
 
@@ -57,10 +58,14 @@ export class PortfolioComponent implements OnInit {
   }
 
   loadLoans(): void {
+    this.loading = true;
     const req = new LoanRequest();
     req.portfolioIds = this.portfolios.filter(p => p.selected).map(p => p.id).join(',');
     req.cutOffDate = this.selectedDate.toUTCString();
-    this.loanService.GetAllLoans(req).subscribe(loans => this.source = loans);
+    this.loanService.GetAllLoans(req).subscribe(loans => {
+      this.source = loans;
+      this.loading = false
+    });
   }
 
   selectPortfolio(p: Portfolio): void {

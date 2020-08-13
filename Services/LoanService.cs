@@ -24,5 +24,20 @@ namespace KensMort.Services
         {
             return _mapper.Map<IList<LoanModel>>((await _loanRepository.GetAll(request)));
         }
+        
+        public async Task<long> GetLoansCount()
+        {
+            return await _loanRepository.GetLoansCount();
+        }
+
+        public async Task<LoanResponseModel> GetProcessedLoans(long processedLoansCount)
+        {
+            var loans = await _loanRepository.GetProcessedLoans(processedLoansCount);
+            return new LoanResponseModel
+            {
+                Loans = _mapper.Map<IList<LoanModel>>(loans),
+                ProcessedLoanCount = processedLoansCount + 1000
+            };
+        }
     }
 }

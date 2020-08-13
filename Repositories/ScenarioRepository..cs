@@ -7,15 +7,20 @@ namespace KensMort.Repositories
     public class ScenarioRepository : IScenarioRepository
     {
         private readonly TestDbContext _testDbContext;
-
+        private IList<ScenarioEntity> _scenarios;
         public ScenarioRepository(TestDbContext testDbContext)
         {
             _testDbContext = testDbContext;
         }
 
-        public Task<IList<ScenarioEntity>> Upload()
+        public void Upload(IList<ScenarioEntity> list)
         {
-            throw new System.NotImplementedException();
+            _scenarios = list;
+        }
+
+        public async Task<IList<ScenarioEntity>> GetAll()
+        {
+            return await Task.FromResult(_scenarios);
         }
     }
 }

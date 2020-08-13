@@ -4,7 +4,7 @@ import {Observable, throwError} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
 import {Category} from './Category';
 import {environment} from '../../environments/environment';
-import {Loan, LoanRequest} from './loan';
+import {Loan, LoanRequest, LoanResponse} from './loan';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,24 @@ export class LoanService {
   // GET
   GetAllLoans(request: LoanRequest): Observable<Loan[]> {
     return this.http.get<Loan[]>(`${this.baseurl}?${this.jsonToQueryString(request)}` , this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  // GET
+  GetCount(): Observable<number> {
+    return this.http.get<number>(`${this.baseurl}/count` , this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  // GET
+  GetProcessedLoans(processedLoanCount: number): Observable<LoanResponse> {
+    return this.http.get<LoanResponse>(`${this.baseurl}/processed/${processedLoanCount}` , this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandler)

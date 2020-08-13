@@ -18,17 +18,26 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {LoanService} from '../services/backend/loan.service';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import { ScenariosComponent } from './scenarios/scenarios.component';
+import {AngularFileDragDropModule} from 'angular-file-drag-drop';
+import {ScenarioService} from "../services/backend/scenario.service";
+import { ScenariosListComponent } from './scenarios/scenarios-list/scenarios-list.component';
+import { ProcessedLoansListComponent } from './scenarios/processed-loans-list/processed-loans-list.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
     AppComponent,
     PortfolioComponent,
-    ScenariosComponent
+    ScenariosComponent,
+    ScenariosListComponent,
+    ProcessedLoansListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     Ng2SmartTableModule,
+    AngularFileDragDropModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,
@@ -38,9 +47,11 @@ import { ScenariosComponent } from './scenarios/scenarios.component';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
-  providers: [PortfolioService, LoanService],
+  providers: [PortfolioService, LoanService, ScenarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
