@@ -21,21 +21,10 @@ you can get more help about it here. https://docs.microsoft.com/en-us/aspnet/cor
 4) Project should contain a 'ui' directory which holds the front end Angular 9 code. Please open a terminal on the ui directory path.
 5) Run 'npm install' which will download all necessary npm packages required to run the front end project. You may be asked to run 'npm audit fix' to resolve all dependencies.
 Please do if you have been asked to do so.
-6) Run the Test Api project. This should start a swagger portal as below:
-
-![Swagger for kensmort API](http://samlad.co.uk/clientimages/kensmort/swagger.png)
-
+6) Run the Test Api project. This should start a swagger portal.
 7)You can test the current version of the API here, please use version number as 1 in order to test it.
 8) Run 'ng serve' to run the front end project. Once it is completed it will prompt to open the front end portal on http://localhost:4200/
 9) Make sure that the api is running on 'https://localhost:5001/' though which would be confirmed when swagger is up and running. Front End portal should look as below:
-
-![Front End for kensmort Test](http://samlad.co.uk/clientimages/kensmort/ui.png)
-
-## Running the .net Core Test
-1) You have already built the solution while launched the API but if you haven't then please build the main solution.
-2) Under the solution you can find a project called 'kensmort.Tests'. Right click on it and select 'Run Unit Tests'. This will run the .net Unit Tests for Api controller.
-
-
 
 
 
