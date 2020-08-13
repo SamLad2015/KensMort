@@ -1,4 +1,4 @@
-# kensmort
+# Kensignton Mortgages
 This repository has been created to host a project created as a Technical test for kensmort.
 
 ## Getting Started
